@@ -1,0 +1,104 @@
+:root {
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* light (default) */
+  --brand: #00652e;
+  --brand-strong: #004d23;
+  --brand-tint: #e3f2e7;
+  --accent: #3dcb5a;
+  --bg: #f6f8f6;
+  --bg-glow: radial-gradient(1200px 600px at 50% -10%, #e2f1e6 0%, transparent 60%);
+  --surface: #ffffff;
+  --surface-2: #f0f4f1;
+  --border: #dfe7e1;
+  --text: #0e1410;
+  --muted: #5d6b62;
+  --user-bubble: #00652e;
+  --user-text: #ffffff;
+  --danger: #c0392b;
+  --danger-bg: #fdecea;
+  --warn-bg: #fff6e0;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px -12px rgb(0 40 15 / 0.18);
+
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --brand: #1f9d55;
+  --brand-strong: #2dbe6c;
+  --brand-tint: rgb(31 157 85 / 0.16);
+  --accent: #3dcb5a;
+  --bg: #0b0f0c;
+  --bg-glow: radial-gradient(1200px 600px at 50% -10%, rgb(31 157 85 / 0.16) 0%, transparent 60%);
+  --surface: #141a16;
+  --surface-2: #1b231e;
+  --border: #26302a;
+  --text: #eaf2ec;
+  --muted: #8fa096;
+  --user-bubble: #1a7f45;
+  --user-text: #ffffff;
+  --danger: #ff7b6b;
+  --danger-bg: rgb(255 123 107 / 0.1);
+  --warn-bg: rgb(255 196 0 / 0.08);
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 10px 30px -14px rgb(0 0 0 / 0.7);
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg-glow), var(--bg);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--brand);
+  color: #fff;
+}
